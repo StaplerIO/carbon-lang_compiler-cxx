@@ -50,6 +50,7 @@ namespace tcpl::compiler::lexer
 	enum class DataTokenType
 	{
 		String,
+		Number,
 		Invalid
 	};
 
@@ -101,6 +102,14 @@ namespace tcpl::compiler::lexer
 		Not,
 		And,
 		Or,
+		Invalid
+	};
+
+	enum class IdentifierType {
+		Data,
+		FunctionSignature,
+		ScopeName,
+		TypeSignature,
 		Invalid
 	};
 

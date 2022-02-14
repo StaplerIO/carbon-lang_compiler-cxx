@@ -4,7 +4,7 @@
 //
 
 #include <cstring>
-#include "../include/models/token_type.h"
+#include "../../include/models/enums/token_type.h"
 
 namespace tcpl::compiler::lexer
 {
