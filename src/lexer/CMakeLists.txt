@@ -3,5 +3,7 @@ add_library(tcpl_compiler_lexer
         include/models/enums/token_type.h models/enums/token_type.cpp
         include/models/token/operator_token.h models/token/operator_token.cpp
         include/models/token/data_token.h models/token/data_token.cpp
-        models/token/identifier.cpp include/models/token/identifier.h
-        include/models/token/position.h
+        include/models/token/identifier.h models/token/identifier.cpp
+        include/models/token/position.h models/token/position.cpp
+        include/tokenizer.h tokenizer.cpp
+        include/builders/comment.h builders/comment.cpp)

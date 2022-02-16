@@ -27,6 +27,15 @@ namespace tcpl::compiler::lexer
 		Token(TokenType type, std::string commentMessage, TokenPosition position);
 		Token(TokenType type, DataToken data, TokenPosition position);
 
+		TokenType getTokenType() const;
+		KeywordTokenType getKeywordType() const;
+		ContainerTokenType getContainer() const;
+		const OperatorToken &getOperatorTk() const;
+		const IdentifierToken &getIdentifier() const;
+		const CommentToken &getCommentMessage() const;
+		const DataToken &getData() const;
+		const TokenPosition &getPosition() const;
+
 	private:
 
 		TokenType type;

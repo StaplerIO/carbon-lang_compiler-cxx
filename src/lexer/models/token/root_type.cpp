@@ -31,4 +31,44 @@ namespace tcpl::compiler::lexer {
 	Token::Token(tcpl::compiler::lexer::TokenType type, tcpl::compiler::lexer::DataToken data, TokenPosition position)
 			: type(type), data(std::move(data)), position(position)
 	{ }
+
+	TokenType Token::getTokenType() const
+	{
+		return type;
+	}
+
+	KeywordTokenType Token::getKeywordType() const
+	{
+		return keyword_type;
+	}
+
+	ContainerTokenType Token::getContainer() const
+	{
+		return container;
+	}
+
+	const OperatorToken &Token::getOperatorTk() const
+	{
+		return operator_tk;
+	}
+
+	const IdentifierToken &Token::getIdentifier() const
+	{
+		return identifier;
+	}
+
+	const CommentToken &Token::getCommentMessage() const
+	{
+		return comment_message;
+	}
+
+	const DataToken &Token::getData() const
+	{
+		return data;
+	}
+
+	const TokenPosition &Token::getPosition() const
+	{
+		return position;
+	}
 }
