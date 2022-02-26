@@ -20,12 +20,14 @@ namespace tcpl::compiler::lexer
 	class Token
 	{
 	public:
-		Token(TokenType type, const KeywordTokenType &keywordType, TokenPosition position);
-		Token(TokenType type, const ContainerTokenType &container, TokenPosition position);
-		Token(TokenType type, const OperatorToken &operatorTk, TokenPosition position);
-		Token(TokenType type, IdentifierToken identifier, TokenPosition position);
-		Token(TokenType type, std::string commentMessage, TokenPosition position);
-		Token(TokenType type, DataToken data, TokenPosition position);
+		Token();
+
+		Token(const KeywordTokenType &keywordType, TokenPosition position);
+		Token(const ContainerTokenType &container, TokenPosition position);
+		Token(const OperatorToken &operatorTk, TokenPosition position);
+		Token(IdentifierToken identifier, TokenPosition position);
+		Token(std::string commentMessage, TokenPosition position);
+		Token(DataToken data, TokenPosition position);
 
 		TokenType getTokenType() const;
 		KeywordTokenType getKeywordType() const;

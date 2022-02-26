@@ -44,6 +44,9 @@ namespace tcpl::compiler::lexer
 		Link,
 		Scope,
 		None,
+		Any,
+		True,
+		False,
 		Invalid
 	};
 
@@ -114,8 +117,6 @@ namespace tcpl::compiler::lexer
 	};
 
 	TokenType match_token(char *token);
-
-	KeywordTokenType match_keyword(char *token);
 }
 
 #endif //CARBON_LANG_COMPILER_TOKEN_TYPE_H

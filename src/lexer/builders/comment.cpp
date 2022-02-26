@@ -15,7 +15,7 @@ namespace tcpl::compiler::lexer
 			auto pos = source_code.find_first_of('\n');
 			auto raw = source_code.substr(0, pos + 1);
 
-			return std::optional(Token(TokenType::Comment, raw.substr(2), TokenPosition(base_pos, raw.length())));
+			return std::optional(Token(raw.substr(2), TokenPosition(base_pos, raw.length())));
 		}
 
 		return std::nullopt;

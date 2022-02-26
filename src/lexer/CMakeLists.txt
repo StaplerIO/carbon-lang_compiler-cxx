@@ -6,4 +6,5 @@ add_library(tcpl_compiler_lexer
         include/models/token/identifier.h models/token/identifier.cpp
         include/models/token/position.h models/token/position.cpp
         include/tokenizer.h tokenizer.cpp
-        include/builders/comment.h builders/comment.cpp)
+        include/builders/comment.h builders/comment.cpp
+        include/builders/keyword.h builders/keyword.cpp)

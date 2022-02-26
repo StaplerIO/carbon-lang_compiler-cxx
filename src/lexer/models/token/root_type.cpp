@@ -7,29 +7,33 @@
 
 #include <utility>
 
-namespace tcpl::compiler::lexer {
-	Token::Token(tcpl::compiler::lexer::TokenType type, const tcpl::compiler::lexer::KeywordTokenType &keywordType, TokenPosition position)
-			: type(type), keyword_type(keywordType), position(position)
+namespace tcpl::compiler::lexer
+{
+	Token::Token(const tcpl::compiler::lexer::KeywordTokenType &keywordType, TokenPosition position)
+			: type(TokenType::Keyword), keyword_type(keywordType), position(position)
 	{ }
 
-	Token::Token(tcpl::compiler::lexer::TokenType type, const tcpl::compiler::lexer::ContainerTokenType &container, TokenPosition position)
-			: type(type), container(container), position(position)
+	Token::Token(const tcpl::compiler::lexer::ContainerTokenType &container, TokenPosition position)
+			: type(TokenType::Container), container(container), position(position)
 	{ }
 
-	Token::Token(tcpl::compiler::lexer::TokenType type, const tcpl::compiler::lexer::OperatorToken &operatorTk, TokenPosition position)
-			: type(type), operator_tk(operatorTk), position(position)
+	Token::Token(const tcpl::compiler::lexer::OperatorToken &operatorTk, TokenPosition position)
+			: type(TokenType::Operator), operator_tk(operatorTk), position(position)
 	{ }
 
-	Token::Token(tcpl::compiler::lexer::TokenType type, tcpl::compiler::lexer::IdentifierToken identifier, TokenPosition position)
-			: type(type), identifier(std::move(identifier)), position(position)
+	Token::Token(tcpl::compiler::lexer::IdentifierToken identifier, TokenPosition position)
+			: type(TokenType::Identifier), identifier(std::move(identifier)), position(position)
 	{ }
 
-	Token::Token(tcpl::compiler::lexer::TokenType type, std::string commentMessage, TokenPosition position)
-			: type(type), comment_message(std::move(commentMessage)), position(position)
+	Token::Token(std::string commentMessage, TokenPosition position)
+			: type(TokenType::Comment), comment_message(std::move(commentMessage)), position(position)
 	{ }
 
-	Token::Token(tcpl::compiler::lexer::TokenType type, tcpl::compiler::lexer::DataToken data, TokenPosition position)
-			: type(type), data(std::move(data)), position(position)
+	Token::Token(tcpl::compiler::lexer::DataToken data, TokenPosition position)
+			: type(TokenType::Data), data(std::move(data)), position(position)
+	{ }
+
+	Token::Token() : type(TokenType::Invalid), position(0, 0), data(DataTokenType::Invalid, "")
 	{ }
 
 	TokenType Token::getTokenType() const
