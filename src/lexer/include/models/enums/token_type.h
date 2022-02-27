@@ -113,6 +113,7 @@ namespace tcpl::compiler::lexer
 		FunctionSignature,
 		ScopeName,
 		TypeSignature,
+		Unknown,
 		Invalid
 	};
 

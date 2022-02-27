@@ -3,7 +3,6 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-
 #include "../../include/models/enums/token_type.h"
 #include "../../include/models/token/data_token.h"
 
@@ -22,5 +21,20 @@ namespace tcpl::compiler::lexer {
 			case DataTokenType::Invalid:
 				break;
 		}
+	}
+
+	DataTokenType DataToken::getType() const
+	{
+		return type;
+	}
+
+	const std::string &DataToken::getRawNumber() const
+	{
+		return raw_number;
+	}
+
+	const std::string &DataToken::getRawString() const
+	{
+		return raw_string;
 	}
 }

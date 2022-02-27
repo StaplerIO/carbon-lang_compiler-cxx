@@ -16,6 +16,10 @@ namespace tcpl::compiler::lexer
 	public:
 		DataToken(DataTokenType type, const std::string &raw_content);
 
+		DataTokenType getType() const;
+		const std::string &getRawNumber() const;
+		const std::string &getRawString() const;
+
 	private:
 
 		DataTokenType type;

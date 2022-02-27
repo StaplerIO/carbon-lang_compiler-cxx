@@ -11,7 +11,7 @@
 
 namespace tcpl::compiler::lexer
 {
-	std::optional<Token> build_comment_token(const std::string& source_code, size_t base_pos);
+	std::optional<Token> try_build_comment_token(const std::string &source_code, size_t base_pos);
 }
 
 #endif //CARBON_LANG_COMPILER_COMMENT_H

@@ -8,7 +8,7 @@
 
 namespace tcpl::compiler::lexer
 {
-	std::optional<Token> build_comment_token(const std::string& source_code, size_t base_pos)
+	std::optional<Token> try_build_comment_token(const std::string& source_code, size_t base_pos)
 	{
 		if (source_code.starts_with("//"))
 		{

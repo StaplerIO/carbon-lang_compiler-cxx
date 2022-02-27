@@ -3,7 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#include "../../include/models/token/identifier.h"
+#include "../../include/models/token/identifier_token.h"
 
 #include <utility>
 

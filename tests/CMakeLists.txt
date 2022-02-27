@@ -6,7 +6,6 @@ include(GoogleTest)
 
 add_executable(
         single_token_type
-        ../src/lexer/builders/comment.cpp ../src/lexer/include/builders/comment.h
         lexer/single_token_type.cpp
 )
 target_link_libraries(
