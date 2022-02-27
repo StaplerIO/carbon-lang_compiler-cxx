@@ -27,11 +27,11 @@ TEST(LexerTest, KeywordTest)
 	auto source = std::string("none any false decl");
 
 	auto result = try_build_keyword_token(source, 0);
-	ASSERT_EQ(result.getTokenType(), TokenType::Keyword);
-	ASSERT_EQ(result.getKeywordType(), KeywordTokenType::None);
+	ASSERT_EQ(result.value().getTokenType(), TokenType::Keyword);
+	ASSERT_EQ(result.value().getKeywordType(), KeywordTokenType::None);
 
 	result = try_build_keyword_token(source.substr(5), 5);
-	ASSERT_EQ(result.getKeywordType(), KeywordTokenType::Any);
+	ASSERT_EQ(result.value().getKeywordType(), KeywordTokenType::Any);
 }
 
 TEST(LexerTest, IdentifierTest)
@@ -39,11 +39,11 @@ TEST(LexerTest, IdentifierTest)
 	auto source = std::string("var");
 
 	auto result = try_build_identifier_token(source, 0);
-	ASSERT_EQ(result.getTokenType(), TokenType::Invalid);
+	ASSERT_FALSE(result.has_value());
 
 	source = std::string("foo");
 	result = try_build_identifier_token(source, 0);
-	ASSERT_EQ(result.getTokenType(), TokenType::Identifier);
+	ASSERT_EQ(result.value().getTokenType(), TokenType::Identifier);
 }
 
 TEST(LexerTest, NumberTest)
@@ -51,6 +51,6 @@ TEST(LexerTest, NumberTest)
 	auto source = std::string("1.23");
 
 	auto result = try_build_number_token(source, 0);
-	ASSERT_EQ(result.getTokenType(), TokenType::Data);
-	ASSERT_EQ(result.getData().getRawNumber(), source);
+	ASSERT_EQ(result.value().getTokenType(), TokenType::Data);
+	ASSERT_EQ(result.value().getData().getRawNumber(), source);
 }

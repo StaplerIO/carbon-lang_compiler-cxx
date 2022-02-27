@@ -11,16 +11,17 @@ namespace tcpl::compiler::lexer
 {
 	const auto number_regex = std::regex(R"([+-]?(\.\d+|\d+\.|\d+|\d+\.?\d+|\d*\.?\d*[Ee][+-]?\d*))");
 
-	Token try_build_number_token(const std::string &token_stream, size_t base_pos)
+	std::optional<Token> try_build_number_token(const std::string &token_stream, size_t base_pos)
 	{
 		std::smatch result;
 		auto match = std::regex_match(token_stream, result, number_regex, std::regex_constants::match_not_bol);
 		if(match)
 		{
 			auto number = result[1].str();
-			return Token(DataToken(DataTokenType::Number, number), TokenPosition(base_pos, number.length()));
+			return std::optional(Token(DataToken(DataTokenType::Number, number),
+									   TokenPosition(base_pos, number.length())));
 		}
 
-		return Token();
+		return std::nullopt;
 	}
 }

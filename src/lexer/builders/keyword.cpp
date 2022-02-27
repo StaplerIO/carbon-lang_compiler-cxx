@@ -35,16 +35,16 @@ namespace tcpl::compiler::lexer
 			{KeywordTokenType::False,    "false"},
 	};
 
-	Token try_build_keyword_token(const std::string &token_stream, size_t base_pos)
+	std::optional<Token> try_build_keyword_token(const std::string &token_stream, size_t base_pos)
 	{
 		for (auto item: keyword_map)
 		{
 			if (token_stream.starts_with(item.second))
 			{
-				return Token(item.first, TokenPosition(base_pos, strlen(item.second)));
+				return std::optional(Token(item.first, TokenPosition(base_pos, strlen(item.second))));
 			}
 		}
 
-		return Token();
+		return std::nullopt;
 	}
 }
