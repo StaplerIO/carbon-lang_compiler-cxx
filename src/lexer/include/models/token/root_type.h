@@ -26,7 +26,7 @@ namespace tcpl::compiler::lexer
 		Token(const ContainerTokenType &container, TokenPosition position);
 		Token(const OperatorToken &operatorTk, TokenPosition position);
 		Token(IdentifierToken identifier, TokenPosition position);
-		Token(std::string commentMessage, TokenPosition position);
+		Token(CommentToken commentMessage, TokenPosition position);
 		Token(DataToken data, TokenPosition position);
 
 		TokenType getTokenType() const;

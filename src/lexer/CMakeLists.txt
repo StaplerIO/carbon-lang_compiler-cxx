@@ -9,5 +9,6 @@ add_library(tcpl_compiler_lexer
         include/builders/keyword.h builders/keyword.cpp 
         include/builders/identifier.h builders/identifier.cpp
         include/builders/number.h builders/number.cpp
+        include/builders/string.h builders/string.cpp
         include/tokenizer.h tokenizer.cpp
         )

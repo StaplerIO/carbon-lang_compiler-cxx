@@ -8,6 +8,7 @@
 #include "include/builders/keyword.h"
 #include "include/builders/identifier.h"
 #include "include/builders/number.h"
+#include "include/builders/string.h"
 
 using namespace tcpl::compiler::lexer;
 
@@ -53,4 +54,17 @@ TEST(LexerTest, NumberTest)
 	auto result = try_build_number_token(source, 0);
 	ASSERT_EQ(result.value().getTokenType(), TokenType::Data);
 	ASSERT_EQ(result.value().getData().getRawNumber(), source);
+}
+
+TEST(LexerTest, StringTest)
+{
+	auto source = std::string("\"hello, world!\"");
+
+	auto result = try_build_string_token(source, 0);
+	ASSERT_EQ(result.value().getTokenType(), TokenType::Data);
+	ASSERT_EQ(result.value().getData().getRawString(), source.substr(1, source.length() - 2));
+
+	source = std::string("\"12\n12\"");
+	result = try_build_string_token(source, 0);
+	ASSERT_EQ(result, std::nullopt);
 }
