@@ -86,7 +86,7 @@ namespace tcpl::compiler::lexer
 		Minus,
 		Times,
 		Divide,
-		Mod,
+		Modulo,
 		Invalid
 	};
 

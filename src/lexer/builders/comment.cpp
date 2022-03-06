@@ -10,6 +10,7 @@ namespace tcpl::compiler::lexer
 {
 	std::optional<Token> try_build_comment_token(const std::string& source_code, size_t base_pos)
 	{
+		// If this is a line comment
 		if (source_code.starts_with("//"))
 		{
 			auto pos = source_code.find_first_of('\n');

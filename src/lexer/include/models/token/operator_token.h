@@ -19,6 +19,11 @@ namespace tcpl::compiler::lexer
 		OperatorToken(RelationOperatorTokenType relation);
 		OperatorToken(LogicalOperatorTokenType logical);
 
+		OperatorTokenType getType() const;
+		CalculationOperatorTokenType getCalculation() const;
+		RelationOperatorTokenType getRelation() const;
+		LogicalOperatorTokenType getLogical() const;
+
 	private:
 
 		OperatorTokenType type;

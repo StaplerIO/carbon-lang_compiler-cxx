@@ -24,4 +24,24 @@ namespace tcpl::compiler::lexer
 	OperatorToken::OperatorToken(OperatorTokenType type)
 			: type(type)
 	{ }
+
+	OperatorTokenType OperatorToken::getType() const
+	{
+		return type;
+	}
+
+	CalculationOperatorTokenType OperatorToken::getCalculation() const
+	{
+		return calculation;
+	}
+
+	RelationOperatorTokenType OperatorToken::getRelation() const
+	{
+		return relation;
+	}
+
+	LogicalOperatorTokenType OperatorToken::getLogical() const
+	{
+		return logical;
+	}
 }
