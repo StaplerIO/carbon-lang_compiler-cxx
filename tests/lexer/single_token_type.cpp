@@ -10,6 +10,7 @@
 #include "include/builders/number.h"
 #include "include/builders/string.h"
 #include "include/builders/operator.h"
+#include "include/builders/container.h"
 
 using namespace tcpl::compiler::lexer;
 
@@ -88,4 +89,15 @@ TEST(LexerTest, OperatorTest)
 
 	result = try_build_operator_token(source.substr(7), 0);
 	ASSERT_EQ(result.value().getOperatorTk().getRelation(), RelationOperatorTokenType::Bigger);
+}
+
+TEST(LexerTest, ContainerTest)
+{
+	auto source = std::string("[}");
+
+	auto result = try_build_container_token(source, 0);
+	ASSERT_EQ(result.value().getContainer(), ContainerTokenType::Index);
+
+	result = try_build_container_token(source.substr(result.value().getPosition().getLength()), result.value().getPosition().getLength());
+	ASSERT_EQ(result.value().getContainer(), ContainerTokenType::AntiBrace);
 }

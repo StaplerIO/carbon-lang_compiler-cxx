@@ -11,5 +11,6 @@ add_library(tcpl_compiler_lexer
         include/builders/number.h builders/number.cpp
         include/builders/string.h builders/string.cpp
         include/builders/operator.h builders/operator.cpp
+        include/builders/container.h builders/container.cpp
         include/tokenizer.h tokenizer.cpp
         )
