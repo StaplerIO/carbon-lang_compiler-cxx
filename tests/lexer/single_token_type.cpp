@@ -7,10 +7,9 @@
 #include "../../src/lexer/include/builders/comment.h"
 #include "include/builders/keyword.h"
 #include "include/builders/identifier.h"
-#include "include/builders/number.h"
-#include "include/builders/string.h"
 #include "include/builders/operator.h"
 #include "include/builders/container.h"
+#include "include/builders/data.h"
 
 using namespace tcpl::compiler::lexer;
 
