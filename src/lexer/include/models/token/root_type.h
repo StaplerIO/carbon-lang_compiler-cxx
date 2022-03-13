@@ -28,6 +28,7 @@ namespace tcpl::compiler::lexer
 		Token(IdentifierToken identifier, TokenPosition position);
 		Token(CommentToken commentMessage, TokenPosition position);
 		Token(DataToken data, TokenPosition position);
+		Token(TokenType type, TokenPosition position);
 
 		TokenType getTokenType() const;
 		KeywordTokenType getKeywordType() const;

@@ -10,6 +10,9 @@
 #include "include/builders/operator.h"
 #include "include/builders/container.h"
 #include "include/builders/data.h"
+#include "include/builders/scope.h"
+#include "include/builders/semicolon.h"
+#include "include/builders/whitespace.h"
 
 using namespace tcpl::compiler::lexer;
 
@@ -99,4 +102,29 @@ TEST(LexerTest, ContainerTest)
 
 	result = try_build_container_token(source.substr(result.value().getPosition().getLength()), result.value().getPosition().getLength());
 	ASSERT_EQ(result.value().getContainer(), ContainerTokenType::AntiBrace);
+}
+
+TEST(LexerTest, ScopeTest)
+{
+	auto source = std::string("::");
+
+	auto result = try_build_scope_token(source, 0);
+	ASSERT_EQ(result.value().getTokenType(), TokenType::Scope);
+}
+
+TEST(LexerTest, SemicolonTest)
+{
+	auto source = std::string(";");
+
+	auto result = try_build_semicolon_token(source, 0);
+	ASSERT_EQ(result.value().getTokenType(), TokenType::Semicolon);
+}
+
+TEST(LexerTest, WhitespaceTest)
+{
+	auto source = std::string("    \n\r\t;1 2 \b3");
+
+	auto result = try_build_whitespace_token(source, 0);
+	ASSERT_EQ(result.value().getTokenType(), TokenType::Whitespace);
+	ASSERT_EQ(result.value().getPosition().getLength(), 7);
 }

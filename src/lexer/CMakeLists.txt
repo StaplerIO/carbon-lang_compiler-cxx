@@ -12,7 +12,10 @@ SET(BUILDER_PATH
         include/builders/identifier.h builders/identifier.cpp
         include/builders/data.h builders/data.cpp
         include/builders/operator.h builders/operator.cpp
-        include/builders/container.h builders/container.cpp)
+        include/builders/container.h builders/container.cpp
+        include/builders/semicolon.h builders/semicolon.cpp
+        include/builders/scope.h builders/scope.cpp
+        include/builders/whitespace.h builders/whitespace.cpp)
 
 add_library(tcpl_compiler_lexer
         ${MODEL_PATH}

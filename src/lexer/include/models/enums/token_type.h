@@ -116,8 +116,6 @@ namespace tcpl::compiler::lexer
 		Unknown,
 		Invalid
 	};
-
-	TokenType match_token(char *token);
 }
 
 #endif //CARBON_LANG_COMPILER_TOKEN_TYPE_H

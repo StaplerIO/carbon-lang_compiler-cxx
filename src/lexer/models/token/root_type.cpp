@@ -36,6 +36,9 @@ namespace tcpl::compiler::lexer
 	Token::Token() : type(TokenType::Invalid), position(0, 0), data(DataTokenType::Invalid, "")
 	{ }
 
+	Token::Token(TokenType type, TokenPosition position) : type(type), position(position)
+	{ }
+
 	TokenType Token::getTokenType() const
 	{
 		return type;
