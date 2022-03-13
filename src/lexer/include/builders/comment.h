@@ -7,6 +7,7 @@
 #define CARBON_LANG_COMPILER_COMMENT_H
 
 #include <string>
+#include <optional>
 #include "../models/token/root_type.h"
 
 namespace tcpl::compiler::lexer
