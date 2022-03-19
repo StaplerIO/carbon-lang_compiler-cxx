@@ -10,7 +10,7 @@
 
 namespace tcpl::compiler::lexer
 {
-	std::vector<Token> tokenize(std::string source_code);
+	std::vector<Token> tokenize(const std::string& source_code);
 }
 
 #endif //CARBON_LANG_COMPILER_TOKENIZER_H

@@ -5,13 +5,13 @@ include_directories(../src/lexer)
 include(GoogleTest)
 
 add_executable(
-        single_token_type
+        lexer_test
         lexer/single_token_type.cpp
-)
+        lexer/full_code_text.cpp)
 target_link_libraries(
-        single_token_type
-        gtest gtest_main
+        lexer_test
         tcpl_compiler_lexer
+        gtest gtest_main
 )
 
-gtest_discover_tests(single_token_type)
+gtest_discover_tests(lexer_test)
