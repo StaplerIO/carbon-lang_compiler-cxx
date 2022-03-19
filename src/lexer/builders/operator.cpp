@@ -31,6 +31,11 @@ namespace tcpl::compiler::lexer
 			{LogicalOperatorTokenType::Not, "!"},
 	};
 
+	static const std::map<OperatorTokenType, const char> direct_operator = {
+			{OperatorTokenType::Comma, ','},
+			{OperatorTokenType::Assignment,  '='},
+	};
+
 	std::optional<Token> try_build_operator_token(const std::string &token_stream, size_t base_pos)
 	{
 		auto calc_op = try_build_calculation_operator_token(token_stream);
@@ -41,6 +46,9 @@ namespace tcpl::compiler::lexer
 
 		auto logic_op = try_build_logical_operator_token(token_stream);
 		if(logic_op != LogicalOperatorTokenType::Invalid) return Token(OperatorToken(logic_op), TokenPosition(base_pos, strlen(logical_operator.at(logic_op))));
+
+		auto direct_op = try_build_direct_operator_token(token_stream);
+		if(direct_op != OperatorTokenType::Invalid) return Token(OperatorToken(direct_op), TokenPosition(base_pos, 1));
 
 		return std::nullopt;
 	}
@@ -78,5 +86,15 @@ namespace tcpl::compiler::lexer
 		}
 
 		return RelationOperatorTokenType::Invalid;
+	}
+
+	OperatorTokenType try_build_direct_operator_token(const std::string &token_stream)
+	{
+		for (auto &item: direct_operator)
+		{
+			if (token_stream.starts_with(item.second)) return item.first;
+		}
+
+		return OperatorTokenType::Invalid;
 	}
 }

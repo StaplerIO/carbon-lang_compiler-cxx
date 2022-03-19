@@ -19,6 +19,8 @@ namespace tcpl::compiler::lexer
 	LogicalOperatorTokenType try_build_logical_operator_token(const std::string &token_stream);
 
 	RelationOperatorTokenType try_build_relation_operator_token(const std::string &token_stream);
+
+	OperatorTokenType try_build_direct_operator_token(const std::string &token_stream);
 }
 
 #endif //CARBON_LANG_COMPILER_OPERATOR_H
