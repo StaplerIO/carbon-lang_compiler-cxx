@@ -12,7 +12,7 @@
 namespace tcpl::compiler::lexer
 {
 	// Any identifier should match the following regular expression
-	const auto identifier_regex = std::regex("([_a-zA-Z][_a-zA-Z0-9]{0,80})");
+	const auto identifier_regex = std::regex(R"(^([_a-zA-Z][_a-zA-Z0-9]{0,80})[\s\S]*)");
 
 	std::optional<Token> try_build_identifier_token(const std::string &token_stream, size_t base_pos)
 	{
@@ -20,7 +20,7 @@ namespace tcpl::compiler::lexer
 		if(!try_build_keyword_token(token_stream, base_pos).has_value())
 		{
 			std::smatch result;
-			auto match = std::regex_match(token_stream, result, identifier_regex, std::regex_constants::match_not_bol);
+			auto match = std::regex_match(token_stream, result, identifier_regex);
 			if(match)
 			{
 				auto identifier_name = result[1].str();

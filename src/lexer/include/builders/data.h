@@ -11,6 +11,8 @@
 
 namespace tcpl::compiler::lexer
 {
+	std::optional<Token> try_build_data_token(const std::string &token_stream, size_t base_pos);
+
 	std::optional<Token> try_build_number_token(const std::string &token_stream, size_t base_pos);
 
 	std::optional<Token> try_build_string_token(const std::string &source_code, size_t base_pos);

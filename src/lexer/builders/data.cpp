@@ -8,12 +8,12 @@
 
 namespace tcpl::compiler::lexer
 {
-	const auto number_regex = std::regex(R"([+-]?(\.\d+|\d+\.|\d+|\d+\.?\d+|\d*\.?\d*[Ee][+-]?\d*))");
+	const auto number_regex = std::regex(R"(^([+-]?\d+(\.?\d+)?)[\s\S]*)");
 
 	std::optional<Token> try_build_number_token(const std::string &token_stream, size_t base_pos)
 	{
 		std::smatch result;
-		auto match = std::regex_match(token_stream, result, number_regex, std::regex_constants::match_not_bol);
+		auto match = std::regex_match(token_stream, result, number_regex);
 		if(match)
 		{
 			auto number = result[1].str();
@@ -42,5 +42,14 @@ namespace tcpl::compiler::lexer
 		}
 
 		return std::nullopt;
+	}
+
+	// TODO: Add converter for escape characters
+
+	std::optional<Token> try_build_data_token(const std::string &token_stream, size_t base_pos)
+	{
+		auto string_result = try_build_string_token(token_stream, base_pos);
+		if(string_result.has_value()) return string_result;
+		else return try_build_number_token(token_stream, base_pos);
 	}
 }

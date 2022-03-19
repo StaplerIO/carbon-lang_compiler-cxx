@@ -17,6 +17,8 @@ SET(BUILDER_PATH
         include/builders/scope.h builders/scope.cpp
         include/builders/whitespace.h builders/whitespace.cpp)
 
+include_directories(include)
+
 add_library(tcpl_compiler_lexer
         ${MODEL_PATH}
         ${BUILDER_PATH}
