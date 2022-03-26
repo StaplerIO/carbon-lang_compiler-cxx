@@ -3,9 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#include "../../include/models/token/root_type.h"
-
-#include <utility>
+#include "token/root_type.h"
 
 namespace tcpl::compiler::lexer
 {

@@ -3,7 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#include "../../include/models/token/position.h"
+#include "token/position.h"
 
 namespace tcpl::compiler::lexer
 {

@@ -3,7 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#include "../../include/models/enums/token_type.h"
+#include "../include/enums/token_type.h"
 
 namespace tcpl::compiler::lexer
 {

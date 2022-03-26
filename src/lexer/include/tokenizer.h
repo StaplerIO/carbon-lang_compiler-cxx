@@ -6,7 +6,7 @@
 #ifndef CARBON_LANG_COMPILER_TOKENIZER_H
 #define CARBON_LANG_COMPILER_TOKENIZER_H
 
-#include "models/token/root_type.h"
+#include "../../lib/include/token/root_type.h"
 
 namespace tcpl::compiler::lexer
 {

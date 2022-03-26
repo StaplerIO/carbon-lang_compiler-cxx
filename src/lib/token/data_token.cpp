@@ -3,10 +3,8 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#include "../../include/models/enums/token_type.h"
-#include "../../include/models/token/data_token.h"
-
-#include <utility>
+#include "../include/enums/token_type.h"
+#include "../include/token/data_token.h"
 
 namespace tcpl::compiler::lexer {
 	DataToken::DataToken(DataTokenType type, const std::string& raw_content) : type(type)

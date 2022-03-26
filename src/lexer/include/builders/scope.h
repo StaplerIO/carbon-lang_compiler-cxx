@@ -7,7 +7,7 @@
 #define CARBON_LANG_COMPILER_SCOPE_H
 
 #include <optional>
-#include "../models/token/root_type.h"
+#include "../../../lib/include/token/root_type.h"
 
 namespace tcpl::compiler::lexer
 {

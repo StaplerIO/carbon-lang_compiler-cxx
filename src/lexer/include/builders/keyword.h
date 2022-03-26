@@ -7,8 +7,7 @@
 #define CARBON_LANG_COMPILER_KEYWORD_H
 
 #include <optional>
-#include "../models/enums/token_type.h"
-#include "../models/token/root_type.h"
+#include "../../../lib/include/token/root_type.h"
 
 namespace tcpl::compiler::lexer
 {

@@ -4,8 +4,7 @@
 //
 
 
-#include "../../include/models/enums/token_type.h"
-#include "../../include/models/token/operator_token.h"
+#include "token/operator_token.h"
 
 namespace tcpl::compiler::lexer
 {

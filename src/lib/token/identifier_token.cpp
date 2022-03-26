@@ -3,9 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#include "../../include/models/token/identifier_token.h"
-
-#include <utility>
+#include "token/identifier_token.h"
 
 namespace tcpl::compiler::lexer {
 	IdentifierToken::IdentifierToken(tcpl::compiler::lexer::IdentifierType type, std::string rawContent)

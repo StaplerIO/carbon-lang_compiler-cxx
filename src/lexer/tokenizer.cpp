@@ -7,7 +7,6 @@
 #include <vector>
 #include <stdexcept>
 #include "include/tokenizer.h"
-#include "include/models/token/root_type.h"
 #include "include/builders/comment.h"
 #include "include/builders/container.h"
 #include "include/builders/identifier.h"
