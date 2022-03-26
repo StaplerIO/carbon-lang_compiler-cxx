@@ -6,7 +6,6 @@
 #include <string>
 #include <map>
 #include "../include/builders/keyword.h"
-#include "../include/models/token/root_type.h"
 
 namespace tcpl::compiler::lexer
 {

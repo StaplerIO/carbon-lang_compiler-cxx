@@ -11,6 +11,9 @@
 
 namespace tcpl::compiler::lexer
 {
+	/**
+	 * @brief Build whitespace token from the first character of the token stream
+	 */
 	std::optional<Token> try_build_whitespace_token(const std::string &token_stream, size_t base_pos);
 }
 

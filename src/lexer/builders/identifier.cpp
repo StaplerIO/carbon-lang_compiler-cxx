@@ -5,8 +5,6 @@
 
 #include <regex>
 #include "../include/builders/identifier.h"
-#include "../include/models/token/root_type.h"
-#include "../include/models/token/identifier_token.h"
 #include "../include/builders/keyword.h"
 
 namespace tcpl::compiler::lexer

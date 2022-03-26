@@ -15,8 +15,13 @@
 
 namespace tcpl::compiler::lexer
 {
+	/// @typedef Contents in a comment token is just a string
 	typedef std::string CommentToken;
 
+	/**
+	 * @class Token
+	 * @brief Saves every token here, it contains all token types the compiler need to construct a package.
+	 */
 	class Token
 	{
 	public:
