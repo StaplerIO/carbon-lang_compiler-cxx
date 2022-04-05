@@ -6,10 +6,12 @@
 #include "../include/enums/token_type.h"
 #include "../include/token/data_token.h"
 
-namespace tcpl::compiler::lexer {
-	DataToken::DataToken(DataTokenType type, const std::string& raw_content) : type(type)
+namespace tcpl::compiler::lexer
+{
+	DataToken::DataToken(DataTokenType type, const std::string &raw_content) : type(type)
 	{
-		switch (type) {
+		switch (type)
+		{
 			case DataTokenType::String:
 				raw_string = raw_content;
 				break;
