@@ -3,8 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#ifndef CARBON_LANG_COMPILER_DATA_TOKEN_H
-#define CARBON_LANG_COMPILER_DATA_TOKEN_H
+#pragma once
 
 #include <string>
 #include "../enums/token_type.h"
@@ -28,5 +27,3 @@ namespace tcpl::compiler::lexer
 		std::string raw_string;
 	};
 }
-
-#endif //CARBON_LANG_COMPILER_DATA_TOKEN_H

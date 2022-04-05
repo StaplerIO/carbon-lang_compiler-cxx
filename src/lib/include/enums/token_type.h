@@ -3,8 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#ifndef CARBON_LANG_COMPILER_TOKEN_TYPE_H
-#define CARBON_LANG_COMPILER_TOKEN_TYPE_H
+#pragma once
 
 namespace tcpl::compiler::lexer
 {
@@ -117,5 +116,3 @@ namespace tcpl::compiler::lexer
 		Invalid
 	};
 }
-
-#endif //CARBON_LANG_COMPILER_TOKEN_TYPE_H

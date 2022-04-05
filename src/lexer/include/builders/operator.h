@@ -3,8 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#ifndef CARBON_LANG_COMPILER_OPERATOR_H
-#define CARBON_LANG_COMPILER_OPERATOR_H
+#pragma once
 
 #include <optional>
 #include <string>
@@ -30,5 +29,3 @@ namespace tcpl::compiler::lexer
 
 	OperatorTokenType try_build_direct_operator_token(const std::string &token_stream);
 }
-
-#endif //CARBON_LANG_COMPILER_OPERATOR_H

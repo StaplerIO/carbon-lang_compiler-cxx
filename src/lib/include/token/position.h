@@ -3,8 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#ifndef CARBON_LANG_COMPILER_POSITION_H
-#define CARBON_LANG_COMPILER_POSITION_H
+#pragma once
 
 #include <cstddef>
 
@@ -25,5 +24,3 @@ namespace tcpl::compiler::lexer
 		size_t length;
 	};
 }
-
-#endif //CARBON_LANG_COMPILER_POSITION_H

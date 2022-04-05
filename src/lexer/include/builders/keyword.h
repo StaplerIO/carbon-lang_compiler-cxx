@@ -3,8 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
-#ifndef CARBON_LANG_COMPILER_KEYWORD_H
-#define CARBON_LANG_COMPILER_KEYWORD_H
+#pragma once
 
 #include <optional>
 #include "../../../lib/include/token/root_type.h"
@@ -16,5 +15,3 @@ namespace tcpl::compiler::lexer
 	 */
 	std::optional<Token> try_build_keyword_token(const std::string &token_stream, size_t base_pos);
 }
-
-#endif //CARBON_LANG_COMPILER_KEYWORD_H
