@@ -3,6 +3,7 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
+#include <cstring>
 #include <map>
 #include "../include/builders/operator.h"
 

@@ -3,6 +3,8 @@
 // Copyright (c) 2022 StaplerIO. All rights reserved.
 //
 
+#include <cstring>
+#include <vector>
 #include "../include/builders/scope.h"
 
 namespace tcpl::compiler::lexer

@@ -6,6 +6,8 @@
 #ifndef CARBON_LANG_COMPILER_POSITION_H
 #define CARBON_LANG_COMPILER_POSITION_H
 
+#include <cstddef>
+
 namespace tcpl::compiler::lexer
 {
 	class TokenPosition
